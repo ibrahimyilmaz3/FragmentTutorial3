@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/editInfoFragment">
+
+    <fragment
+        android:id="@+id/editInfoFragment"
+        android:name="com.iyilmaz.fragmenttutorial3.EditInfoFragment"
+        android:label="Edit Information"
+        tools:layout="@layout/fragment_edit_info" >
+        <action
+            android:id="@+id/action_editInfoFragment_to_showInfoFragment"
+            app:destination="@id/showInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showInfoFragment"
+        android:name="com.iyilmaz.fragmenttutorial3.ShowInfoFragment"
+        android:label="View Information"
+        tools:layout="@layout/fragment_show_info" >
+        <action
+            android:id="@+id/action_showInfoFragment_to_editInfoFragment"
+            app:destination="@id/editInfoFragment"
+            app:popUpTo="@id/editInfoFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
